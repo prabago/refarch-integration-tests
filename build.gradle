@@ -1,0 +1,39 @@
+/*
+ * This build file for testing a set of components:
+ * - DB2 Inventory data access
+ * - Data access layer access as wb service clients
+ */
+
+// Apply the java-library plugin to add support for Java Library
+// apply plugin: 'java-library'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+
+    }
+}
+
+plugins {
+  id 'java'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+// Java compiler compliance level
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    compile fileTree(dir: 'lib', include: ['*.jar'])
+ 
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
+
+

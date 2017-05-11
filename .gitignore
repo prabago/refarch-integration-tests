@@ -1,0 +1,10 @@
+.apt_generated/
+.factorypath
+.gradle/
+.settings/
+.DS_Store
+build/
+bin/
+derby.log
+WebContent/
+
