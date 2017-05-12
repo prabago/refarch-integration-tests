@@ -28,18 +28,22 @@ public interface InventoryService {
      * 
      * @return
      *     returns java.util.List<inventory.ws.Item>
+     * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "items", targetNamespace = "http://ws.inventory/", className = "inventory.ws.Items")
     @ResponseWrapper(localName = "itemsResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemsResponse")
-    public List<Item> items();
+    public List<Item> items()
+        throws DALException
+    ;
 
     /**
      * 
      * @param arg0
      * @return
      *     returns inventory.ws.Item
+     * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -47,27 +51,50 @@ public interface InventoryService {
     @ResponseWrapper(localName = "updateItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.UpdateItemResponse")
     public Item updateItem(
         @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0);
+        Item arg0)
+        throws DALException
+    ;
 
     /**
      * 
-     * @param arg0
+     * @param name
+     * @return
+     *     returns inventory.ws.Item
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "itemByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByName")
+    @ResponseWrapper(localName = "itemByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByNameResponse")
+    public Item itemByName(
+        @WebParam(name = "name", targetNamespace = "")
+        String name)
+        throws DALException
+    ;
+
+    /**
+     * 
+     * @param id
      * @return
      *     returns java.lang.String
+     * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "deleteItem", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItem")
     @ResponseWrapper(localName = "deleteItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.DeleteItemResponse")
     public String deleteItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
+        @WebParam(name = "id", targetNamespace = "")
+        long id)
+        throws DALException
+    ;
 
     /**
      * 
      * @param arg0
      * @return
      *     returns inventory.ws.Item
+     * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
@@ -75,11 +102,13 @@ public interface InventoryService {
     @ResponseWrapper(localName = "newItemResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.NewItemResponse")
     public Item newItem(
         @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0);
+        Item arg0)
+        throws DALException
+    ;
 
     /**
      * 
-     * @param arg0
+     * @param name
      * @return
      *     returns java.lang.String
      */
@@ -88,21 +117,24 @@ public interface InventoryService {
     @RequestWrapper(localName = "sayHello", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHello")
     @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SayHelloResponse")
     public String sayHello(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
     /**
      * 
-     * @param arg0
+     * @param id
      * @return
      *     returns inventory.ws.Item
+     * @throws DALException
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "itemById", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemById")
     @ResponseWrapper(localName = "itemByIdResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.ItemByIdResponse")
     public Item itemById(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
+        @WebParam(name = "id", targetNamespace = "")
+        long id)
+        throws DALException
+    ;
 
 }

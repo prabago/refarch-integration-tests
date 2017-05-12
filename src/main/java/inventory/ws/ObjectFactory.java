@@ -27,9 +27,12 @@ public class ObjectFactory {
     private final static QName _UpdateItemResponse_QNAME = new QName("http://ws.inventory/", "updateItemResponse");
     private final static QName _Items_QNAME = new QName("http://ws.inventory/", "items");
     private final static QName _DeleteItemResponse_QNAME = new QName("http://ws.inventory/", "deleteItemResponse");
+    private final static QName _ItemByName_QNAME = new QName("http://ws.inventory/", "itemByName");
+    private final static QName _ItemByNameResponse_QNAME = new QName("http://ws.inventory/", "itemByNameResponse");
     private final static QName _DeleteItem_QNAME = new QName("http://ws.inventory/", "deleteItem");
     private final static QName _NewItemResponse_QNAME = new QName("http://ws.inventory/", "newItemResponse");
     private final static QName _Item_QNAME = new QName("http://ws.inventory/", "Item");
+    private final static QName _DALFault_QNAME = new QName("http://ws.inventory/", "DALFault");
     private final static QName _ItemByIdResponse_QNAME = new QName("http://ws.inventory/", "itemByIdResponse");
     private final static QName _SayHelloResponse_QNAME = new QName("http://ws.inventory/", "sayHelloResponse");
     private final static QName _UpdateItem_QNAME = new QName("http://ws.inventory/", "updateItem");
@@ -102,6 +105,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DalFault }
+     * 
+     */
+    public DalFault createDalFault() {
+        return new DalFault();
+    }
+
+    /**
      * Create an instance of {@link Item }
      * 
      */
@@ -123,6 +134,22 @@ public class ObjectFactory {
      */
     public DeleteItem createDeleteItem() {
         return new DeleteItem();
+    }
+
+    /**
+     * Create an instance of {@link ItemByNameResponse }
+     * 
+     */
+    public ItemByNameResponse createItemByNameResponse() {
+        return new ItemByNameResponse();
+    }
+
+    /**
+     * Create an instance of {@link ItemByName }
+     * 
+     */
+    public ItemByName createItemByName() {
+        return new ItemByName();
     }
 
     /**
@@ -177,6 +204,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ItemByName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "itemByName")
+    public JAXBElement<ItemByName> createItemByName(ItemByName value) {
+        return new JAXBElement<ItemByName>(_ItemByName_QNAME, ItemByName.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ItemByNameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "itemByNameResponse")
+    public JAXBElement<ItemByNameResponse> createItemByNameResponse(ItemByNameResponse value) {
+        return new JAXBElement<ItemByNameResponse>(_ItemByNameResponse_QNAME, ItemByNameResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteItem }{@code >}}
      * 
      */
@@ -201,6 +246,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "Item")
     public JAXBElement<Item> createItem(Item value) {
         return new JAXBElement<Item>(_Item_QNAME, Item.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DalFault }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "DALFault")
+    public JAXBElement<DalFault> createDALFault(DalFault value) {
+        return new JAXBElement<DalFault>(_DALFault_QNAME, DalFault.class, null, value);
     }
 
     /**
