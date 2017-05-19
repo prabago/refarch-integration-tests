@@ -3,6 +3,7 @@ package inventory.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -22,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *         &lt;element name="imgAlt" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="img" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,30 +39,43 @@ import javax.xml.bind.annotation.XmlType;
     "description",
     "price",
     "imgAlt",
-    "img"
+    "img",
+    "quantity"
 })
 public class Item {
 
-    protected long id;
+    @XmlElement(required = true, type = Long.class, nillable = true)
+    protected Long id;
     protected String name;
     protected String description;
-    protected double price;
+    @XmlElement(required = true, type = Double.class, nillable = true)
+    protected Double price;
     protected String imgAlt;
     protected String img;
+    @XmlElement(required = true, type = Integer.class, nillable = true)
+    protected Integer quantity;
 
     /**
      * Gets the value of the id property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
      */
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
      */
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 
@@ -115,16 +130,24 @@ public class Item {
     /**
      * Gets the value of the price property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
     /**
      * Sets the value of the price property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public void setPrice(double value) {
+    public void setPrice(Double value) {
         this.price = value;
     }
 
@@ -174,6 +197,30 @@ public class Item {
      */
     public void setImg(String value) {
         this.img = value;
+    }
+
+    /**
+     * Gets the value of the quantity property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    /**
+     * Sets the value of the quantity property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setQuantity(Integer value) {
+        this.quantity = value;
     }
 
 }
