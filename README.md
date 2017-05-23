@@ -19,3 +19,4 @@ The project uses gradle so the following will execute all the tests
 ```
 
 ## Code explanation
+The first test implemented was db2.tests.TestAccessToDB to validate DB2 / jdbc connection with light JPA entity and a query to get all the items. The DB item rows were created from script in the [DB2 project](https://github.com/ibm-cloud-architecture/refarch-integration-inventory-db2) directly on the Brown DB2 server. 

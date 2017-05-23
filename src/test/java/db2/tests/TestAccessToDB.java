@@ -18,6 +18,11 @@ import org.junit.Test;
 import inventory.model.ItemEntity;
 import inventory.test.InventoryPersistenceManager;
 
+/**
+ * This test is to validate direct remote JPA/jdbc access to the database.
+ * @author jeromeboyer
+ *
+ */
 public class TestAccessToDB {
 
 	@BeforeClass
