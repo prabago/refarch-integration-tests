@@ -22,17 +22,28 @@ public class TestAccessToAPI {
 	}
 
 	@Test
-	public void test() {
-		APICclient client = new APICclient();
+	public void testDirectAccessToAPIC() {
+		APICclient client = new APICclient("172.16.254.89");
 		try {
-			String itemArray=client.executeGetMethod("csplab/sb/InventoryService/items", null);
+			String itemArray=client.executeGetMethod("csplab/sb/sample-inventory-api/items", null);
 			System.out.println(itemArray);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
 		}
-		
 	}
 
+	
+	@Test
+	public void testBluemixSecureGatewayAccess() {
+		APICclient client = new APICclient("cap-sg-prd-5.integration.ibmcloud.com",16582);
+		try {
+			String itemArray=client.executeGetMethod("csplab/sb/sample-inventory-api/items", null);
+			System.out.println(itemArray);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail();
+		}
+	}
 
 }

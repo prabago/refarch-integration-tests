@@ -17,8 +17,18 @@ public class APICclient extends RestClient{
 	
     public APICclient(){
     	setHost( new HttpHost(hostName,this.getPort(),"https"));
-    	setHttpClient(HttpClientBuilder.create().build());
-    	
+    	setHttpClient(HttpClientBuilder.create().build());	
+    }
+    
+    public APICclient(String hn){
+    	setHost( new HttpHost(hn,this.getPort(),"https"));
+    	setHttpClient(HttpClientBuilder.create().build());	
+    }
+
+    public APICclient(String hn,int port){
+    	setPort(port);
+    	setHost( new HttpHost(hn,this.getPort(),"https"));
+    	setHttpClient(HttpClientBuilder.create().build());	
     }
     
     @Override
