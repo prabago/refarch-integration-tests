@@ -1,4 +1,4 @@
-package api.tests;
+package sgapi.tests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,11 @@ import org.junit.Test;
 import inventory.test.APICclient;
 
 /**
- * Test the API Connect Inventory API using the API Connect Gateway end point.
+ * Test the Inventory API 
  * @author Jerome Boyer
  *
  */
-public class TestAccessToAPI {
+public class TestAccessToAPIViaSecureGateway {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,9 +26,10 @@ public class TestAccessToAPI {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	
 	@Test
-	public void testGetItemsDirectAccessToAPIC() {
-		APICclient client = new APICclient("172.16.254.89");
+	public void testBluemixSecureGatewayAccess() {
+		APICclient client = new APICclient("cap-sg-prd-5.integration.ibmcloud.com",16582);
 		try {
 			String itemArray=client.executeGetMethod("csplab/sb/sample-inventory-api/items", null);
 			System.out.println(itemArray);
@@ -37,4 +38,5 @@ public class TestAccessToAPI {
 			Assert.fail();
 		}
 	}
+
 }

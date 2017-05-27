@@ -20,10 +20,12 @@ import inventory.test.InventoryPersistenceManager;
 
 /**
  * This test is to validate direct remote JPA/jdbc access to the database.
- * @author jeromeboyer
+ * 
+ * It uses a local persistence manager.
+ * @author Jerome Boyer
  *
  */
-public class TestAccessToDB {
+public class TestAccessToItemDB {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -51,8 +53,18 @@ public class TestAccessToDB {
 			em.close();
 		}	
 	}
+
 	
 	@Test
+	public void testGetOneItem() {
+		EntityManager em = InventoryPersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+		ItemEntity entity=em.find(ItemEntity.class, 13403);
+		Assert.assertNotNull(entity);
+		Assert.assertEquals(13403, entity.getId());
+		em.close();
+	}
+	
+	//@Test
 	public void testModifyUpdateDate(){
 		EntityManager em = InventoryPersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
 		 

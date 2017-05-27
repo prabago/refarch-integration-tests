@@ -11,20 +11,27 @@ import inventory.ws.DALException;
 import inventory.ws.InventoryService;
 import inventory.ws.InventoryServiceService;
 import inventory.ws.Item;
+/**
+ * Test the CRUD operations on Item via the DAL SOAP interface
+ * @author Jerome Boyer
+ *
+ */
+public class TestItemAccessViaWS {
 
-public class TestAccessToWS {
-
+	static InventoryService serv;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		 serv= (new InventoryServiceService()).getInventoryServicePort();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	//@Test
+	@Test
 	public void testGetItems() {
-		InventoryService serv= (new InventoryServiceService()).getInventoryServicePort();
+	
 		List<Item> items;
 		try {
 			items = serv.items();
@@ -39,13 +46,13 @@ public class TestAccessToWS {
 		
 	}
 	
-	//@Test
+	@Test
 	public void testGetItem(){
-		InventoryService serv= (new InventoryServiceService()).getInventoryServicePort();
 		Item item = null;
 		try {
 			item=serv.itemById(13403);
 			Assert.assertNotNull(item);
+			Assert.assertTrue(13403== item.getId());
 			Assert.assertEquals("Computing Scale", item.getName());
 		} catch(DALException e) {
 			e.printStackTrace();
@@ -53,9 +60,8 @@ public class TestAccessToWS {
 		}
 	}
 
-	//@Test
+	@Test
 	public void testCreateDeleteItem(){
-		InventoryService serv= (new InventoryServiceService()).getInventoryServicePort();
 		Item item = new Item();
 		item.setName("A test item");
 		item.setDescription("item description");
@@ -65,12 +71,12 @@ public class TestAccessToWS {
 		try {
 			Item itemOut=serv.newItem(item);
 			Assert.assertNotNull(itemOut);
-		
+			Assert.assertTrue(itemOut.getId()>0);
 			Assert.assertNotNull(itemOut.getName());
 			Assert.assertEquals("A test item", itemOut.getName());
 			String r=serv.deleteItem(itemOut.getId());
 			Assert.assertNotNull(r);
-			Assert.assertEquals("Succes",r);
+			Assert.assertEquals("Success",r);
 		} catch (DALException e) {
 			e.printStackTrace();
 			Assert.fail();
@@ -79,7 +85,6 @@ public class TestAccessToWS {
 	
 	@Test
 	public void testUpdateQuantity(){
-		InventoryService serv= (new InventoryServiceService()).getInventoryServicePort();
 		Item item;
 		try {
 			item=serv.itemById(13403);
