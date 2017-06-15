@@ -52,7 +52,7 @@ public class TestItemAccessViaWS {
 		try {
 			item=serv.itemById(13403);
 			Assert.assertNotNull(item);
-			Assert.assertTrue(13403== item.getId());
+			Assert.assertTrue(13403== item.getItemId());
 			Assert.assertEquals("Computing Scale", item.getName());
 		} catch(DALException e) {
 			e.printStackTrace();
@@ -71,10 +71,10 @@ public class TestItemAccessViaWS {
 		try {
 			Item itemOut=serv.newItem(item);
 			Assert.assertNotNull(itemOut);
-			Assert.assertTrue(itemOut.getId()>0);
+			Assert.assertTrue(itemOut.getItemId()>0);
 			Assert.assertNotNull(itemOut.getName());
 			Assert.assertEquals("A test item", itemOut.getName());
-			String r=serv.deleteItem(itemOut.getId());
+			String r=serv.deleteItem(itemOut.getItemId());
 			Assert.assertNotNull(r);
 			Assert.assertEquals("Success",r);
 		} catch (DALException e) {

@@ -2,6 +2,8 @@
  * This build file for testing a set of components:
  * - DB2 Inventory data access
  * - Data access layer access as wb service clients
+ * - Access to API Connect gateway to reach RESTful api
+ * - Access Secure Gateway Service on Bluemix to reach Inventor API 
  */
 
 // Apply the java-library plugin to add support for Java Library
@@ -25,9 +27,17 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+  test {
+    resources {
+      srcDir "arc/main/resources"
+    }
+  }
+}
+
 // Java compiler compliance level
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
     compile fileTree(dir: 'lib', include: ['*.jar'])

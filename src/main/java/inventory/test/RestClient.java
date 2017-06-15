@@ -97,6 +97,7 @@ public abstract class RestClient {
 	
 	protected String executeMethod( HttpUriRequest method) throws Exception {
 		CloseableHttpResponse httpResponse=null;
+		
 		try {
 			httpResponse = httpClient.execute(method,context);
 			int statusCode = httpResponse.getStatusLine().getStatusCode();

@@ -34,7 +34,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "item", propOrder = {
-    "id",
+    "itemId",
     "name",
     "description",
     "price",
@@ -45,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Item {
 
     @XmlElement(required = true, type = Long.class, nillable = true)
-    protected Long id;
+    protected Long itemId;
     protected String name;
     protected String description;
     @XmlElement(required = true, type = Double.class, nillable = true)
@@ -63,8 +63,8 @@ public class Item {
      *     {@link Long }
      *     
      */
-    public Long getId() {
-        return id;
+    public Long getItemId() {
+        return itemId;
     }
 
     /**
@@ -75,8 +75,8 @@ public class Item {
      *     {@link Long }
      *     
      */
-    public void setId(Long value) {
-        this.id = value;
+    public void setItemId(Long value) {
+        this.itemId = value;
     }
 
     /**
