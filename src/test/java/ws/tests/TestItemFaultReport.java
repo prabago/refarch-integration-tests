@@ -91,7 +91,7 @@ public class TestItemFaultReport {
 		boolean gotIt=false;
 		try {
 			itemOut=serv.newItem(item);
-			Assert.assertTrue(itemOut.getItemId()>0);
+			Assert.assertTrue(itemOut.getId()>0);
 			// unset name
 			itemOut.setName("");
 			item = serv.updateItem(itemOut);
@@ -102,7 +102,7 @@ public class TestItemFaultReport {
 		}
 		if (gotIt) {
 			try {
-				serv.deleteItem(itemOut.getItemId());
+				serv.deleteItem(itemOut.getId());
 			} catch (DALException e) {
 				e.printStackTrace();
 				Assert.fail();
@@ -125,10 +125,10 @@ public class TestItemFaultReport {
 		Long keepIdToDelete= new Long(0);
 		try {
 			itemOut=serv.newItem(item);
-			Assert.assertTrue(itemOut.getItemId()>0);
-			keepIdToDelete=itemOut.getItemId();
+			Assert.assertTrue(itemOut.getId()>0);
+			keepIdToDelete=itemOut.getId();
 			// unset name
-			itemOut.setItemId(null);
+			itemOut.setId(null);
 			item = serv.updateItem(itemOut);
 		} catch (DALException e) {
 			Assert.assertTrue("ERRDAO2001".equals(e.getFaultInfo().getCode()));

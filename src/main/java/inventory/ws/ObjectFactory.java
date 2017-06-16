@@ -30,6 +30,8 @@ public class ObjectFactory {
     private final static QName _ItemByName_QNAME = new QName("http://ws.inventory/", "itemByName");
     private final static QName _ItemByNameResponse_QNAME = new QName("http://ws.inventory/", "itemByNameResponse");
     private final static QName _DeleteItem_QNAME = new QName("http://ws.inventory/", "deleteItem");
+    private final static QName _SearchByNameResponse_QNAME = new QName("http://ws.inventory/", "searchByNameResponse");
+    private final static QName _SearchByName_QNAME = new QName("http://ws.inventory/", "searchByName");
     private final static QName _NewItemResponse_QNAME = new QName("http://ws.inventory/", "newItemResponse");
     private final static QName _Item_QNAME = new QName("http://ws.inventory/", "Item");
     private final static QName _DALFault_QNAME = new QName("http://ws.inventory/", "DALFault");
@@ -129,11 +131,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SearchByName }
+     * 
+     */
+    public SearchByName createSearchByName() {
+        return new SearchByName();
+    }
+
+    /**
      * Create an instance of {@link DeleteItem }
      * 
      */
     public DeleteItem createDeleteItem() {
         return new DeleteItem();
+    }
+
+    /**
+     * Create an instance of {@link SearchByNameResponse }
+     * 
+     */
+    public SearchByNameResponse createSearchByNameResponse() {
+        return new SearchByNameResponse();
     }
 
     /**
@@ -228,6 +246,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "deleteItem")
     public JAXBElement<DeleteItem> createDeleteItem(DeleteItem value) {
         return new JAXBElement<DeleteItem>(_DeleteItem_QNAME, DeleteItem.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchByNameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "searchByNameResponse")
+    public JAXBElement<SearchByNameResponse> createSearchByNameResponse(SearchByNameResponse value) {
+        return new JAXBElement<SearchByNameResponse>(_SearchByNameResponse_QNAME, SearchByNameResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchByName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "searchByName")
+    public JAXBElement<SearchByName> createSearchByName(SearchByName value) {
+        return new JAXBElement<SearchByName>(_SearchByName_QNAME, SearchByName.class, null, value);
     }
 
     /**

@@ -54,7 +54,7 @@ public abstract class RestClient {
 		context.setAuthCache(authCache);
 	}
 
-	protected URI buildCompleteUrl(String url,List<NameValuePair> nvps) {
+	public URI buildCompleteUrl(String url,List<NameValuePair> nvps) {
 		URIBuilder builder = new URIBuilder();
 		String newUrl=baseUrl; 	
 		if (url!=null) {
@@ -95,7 +95,7 @@ public abstract class RestClient {
 	   }
    }
 	
-	protected String executeMethod( HttpUriRequest method) throws Exception {
+	public String executeMethod( HttpUriRequest method) throws Exception {
 		CloseableHttpResponse httpResponse=null;
 		
 		try {
@@ -106,7 +106,6 @@ public abstract class RestClient {
 			displayResponse(method.getURI().toString(), statusCode, response);
 			
 			if (statusCode != HttpStatus.SC_OK && statusCode != HttpStatus.SC_NO_CONTENT && statusCode != HttpStatus.SC_CREATED ) {
-				System.err.println("Method failed: " + httpResponse.getStatusLine());
 				throw new RuntimeException ("Method failed: " + httpResponse.getStatusLine());
 			  
 			}

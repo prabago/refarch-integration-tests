@@ -108,6 +108,23 @@ public interface InventoryService {
 
     /**
      * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<inventory.ws.Item>
+     * @throws DALException
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchByName", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SearchByName")
+    @ResponseWrapper(localName = "searchByNameResponse", targetNamespace = "http://ws.inventory/", className = "inventory.ws.SearchByNameResponse")
+    public List<Item> searchByName(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0)
+        throws DALException
+    ;
+
+    /**
+     * 
      * @param name
      * @return
      *     returns java.lang.String
