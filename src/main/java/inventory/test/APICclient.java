@@ -20,7 +20,7 @@ public class APICclient extends RestClient{
 	protected String hostName;
 
 	protected static Properties props = new Properties();
- 
+
 	static {
 		InputStream fin=APICclient.class.getClassLoader().getResourceAsStream("env.properties");
 		 try {
@@ -31,24 +31,24 @@ public class APICclient extends RestClient{
 			props.setProperty("x-ibm-client-Id","5d2a6edb-793d-4193-b9b0-0a087ea6c123");
 		}
 	}
-	
-	public APICclient(){		
+
+	public APICclient(){
 		init();
 	}
-	  
+
 	private void init(){
 		setHost( new HttpHost(props.getProperty("apigateway"),this.getPort(),"https"));
-        setHttpClient(HttpClients.custom().setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE).build());
+    setHttpClient(HttpClients.custom().setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE).build());
 	}
-	  
+
 	public APICclient(String name,int port){
 		this.setPort(port);
 		props.setProperty("apigateway", name);
 		init();
 	}
-	
-   
-    
+
+
+
     @Override
     public String executeGetMethod(String url,List<NameValuePair> nvps) throws Exception {
     	HttpGet request = new HttpGet(buildCompleteUrl(url,nvps));
@@ -65,8 +65,8 @@ public class APICclient extends RestClient{
     	request.setHeader("X-IBM-Client-Id",getProps().getProperty("x-ibm-client-Id"));
     	return executeMethod(request);
     }
-    
-    
+
+
     public String executeGetWithToken(String url,List<NameValuePair> nvps,String token) throws Exception{
     	HttpGet request = new HttpGet(buildCompleteUrl(url,nvps));
     	request.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
