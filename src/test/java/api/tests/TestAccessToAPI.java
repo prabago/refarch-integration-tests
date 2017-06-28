@@ -68,7 +68,7 @@ public class TestAccessToAPI {
 			@SuppressWarnings("unchecked")
 			Item[] l = parser.fromJson(itemArray, Item[].class);
 			Assert.assertTrue(l.length>0);
-			Assert.assertTrue(l[0].getId() == 13402);
+			Assert.assertTrue(l[0].getId() == 13401);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
@@ -85,8 +85,7 @@ public class TestAccessToAPI {
 			@SuppressWarnings("unchecked")
 			Item l = parser.fromJson(itemArray, Item.class);
 			Assert.assertTrue("Hollerith Tabulator".equals(l.getName()));
-			//TODO this test fails until API Connect send item.id and not item.itemId
-			//Assert.assertTrue(l.getId() == 13402);
+			Assert.assertTrue(l.getId() == 13402);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail();
