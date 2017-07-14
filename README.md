@@ -10,12 +10,13 @@ The components tested are :
 * BFF for the Bluemix app.
 
 # Test Driven development
-The development approach used for the hybrid integration validation is a test driven development practice where unit tests are developed before code. The Java layer for the Data Access Layer is developed with this practice. The current project is to test at the integration level, testcases being consumer of the services.
+The development approach used for the hybrid integration validation is a test driven development practice where unit tests are developed before code, and then each deployed component is tested in isolation and then as a pyramid testing.
 
-## References
-[Test driven development introduction in IBM garage method](https://www.ibm.com/devops/method/content/code/practice_test_driven_development/)
+The Java layer for the Data Access Layer is developed with a pure TDD practice.
 
-# Integration Test Presentation
+This testing  project is to test at the integration level, testcases are consumers of each service.
+
+# Integration Test 
 In this section we are detailing the tests defined and how to execute them.
 ## Test organization
 Testcases are under the src/test/java. The src/main/java folder includes utility classes for testing, and generated classes by importing the SOAP web service for the DAL component using the `wsimport` tool.
@@ -73,11 +74,11 @@ setHttpClient(HttpClients.custom().setSSLHostnameVerifier(NoopHostnameVerifier.I
 As the Bluemix secure gateway has a public URL it is possible to valdiate the path secure gateway on bluemix -> secure gateway client on premise server -> API Connect on premise server -> SOAP service -> DB2
 The tests are under the package sgapi.tests.
 
-## Execute tests
-The project uses gradle so the following will execute all the tests
+## Execute integration validation tests
+The project uses gradle so the following command executes all the tests
 ```
 ./gradlew build
 ```
 
-# Test practice
-The following article gives some detail on the different test discipline for hybrid cloud.
+# References
+[Test driven development introduction in IBM garage method](https://www.ibm.com/devops/method/content/code/practice_test_driven_development/)

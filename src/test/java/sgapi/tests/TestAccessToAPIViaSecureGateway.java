@@ -45,7 +45,7 @@ public class TestAccessToAPIViaSecureGateway {
 	public void aTestLoginAccess(){
 		try {
 			List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-			nvps.add(new BasicNameValuePair("username", "case@csplab.local"));
+			nvps.add(new BasicNameValuePair("username", "case@usibm"));
 			nvps.add(new BasicNameValuePair("password", "case01"));
 			String rep=client.executeLogin("csplab/sb/sample-inventory-api/login", nvps);
 			Gson parser = new Gson();
