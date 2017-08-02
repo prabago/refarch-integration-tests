@@ -6,6 +6,4 @@
 .DS_Store
 build/
 bin/
-derby.log
-WebContent/
-
+node_modules/

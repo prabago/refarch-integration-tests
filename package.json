@@ -1,0 +1,29 @@
+{
+  "name": "IntegrationTests",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-cloud-architecture/refarch-integration-tests.git"
+  },
+  "engines": {
+    "node": "6.x",
+    "npm": "5.x"
+  },
+  "author": "Jerome Boyer",
+  "scripts": {
+    "test": "mocha"
+  },
+  "private": true,
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "zone.js": "^0.8.4",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "querystring": "^0.2.0",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.1"
+  }
+}

@@ -7,19 +7,18 @@ The components tested are :
 * DB2 inventory database
 * Data Access Layer - JAXWS application
 * API Connect - Exposed RESTful API
-* BFF for the Bluemix app.
+* Secure Gateway proxy
+* REST API of the Case Inc Portal back end for front end for the Bluemix app.
 
 # Test Driven development
-The development approach used for the hybrid integration validation is a test driven development practice where unit tests are developed before code, and then each deployed component is tested in isolation and then as a pyramid testing.
+The development approach used for the hybrid integration validation is a test driven development practice where unit tests are developed before code, and then each deployed component is tested in isolation and then as a pyramid testing: first back end component, then middle tier and then front end API.
 
-The Java layer for the Data Access Layer is developed with a pure TDD practice.
+The Java layer for the Data Access Layer is developed with a pure TDD practice. This testing  project is to test at the integration level, testcases are consumers of each service.
 
-This testing  project is to test at the integration level, testcases are consumers of each service.
-
-# Integration Test 
-In this section we are detailing the tests defined and how to execute them.
+# Integration Test
+In this section we are detailing the tests defined in this current project and how to execute them.
 ## Test organization
-Testcases are under the src/test/java. The src/main/java folder includes utility classes for testing, and generated classes by importing the SOAP web service for the DAL component using the `wsimport` tool.
+Testcases are under the src/test/java. The src/main/java folder includes utility classes for testing, and generated classes by importing the SOAP web service for the DAL component using the `wsimport` tool. The src/test/java and src/test/node folders includes the test case definitions.
 
 ## DB2 Validation
 The DB2 server validation are under the package db2.tests. It uses JPA entity manager to connect to the remote database server using the persistence.xml configuration in src/main/resources. This JPA configuration file specifies the class being used as Entity and specify the JDBC properties like database URL and user / password
@@ -64,15 +63,21 @@ public void testGetItemsDirectAccessToAPIC() {
 	}
 }
 ```
-The test uses a wrapper class on top of Apache HTTP client to do the HTTP connection. As we are using SSL communication and the SSL certificate of the API Connect deployment is self certified this wrapper call disable hostname verification when opening SSL socket. The code to do that is in the `init()` method of the APICclient.java class:
+The test uses a wrapper class on top of Apache HTTP client to do the HTTP connection. As we are using SSL communication and the SSL certificate of the API Connect deployment is self certified, this wrapper call disables hostname verification when opening SSL socket. The code to do that is in the `init()` method of the APICclient.java class:
 ```Java
 setHttpClient(HttpClients.custom().setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE).build());
 
 ```
 
 ## Secure gateway on bluemix Validation
-As the Bluemix secure gateway has a public URL it is possible to valdiate the path secure gateway on bluemix -> secure gateway client on premise server -> API Connect on premise server -> SOAP service -> DB2
-The tests are under the package sgapi.tests.
+As the Bluemix secure gateway has a public URL it is possible to validate the path IBM secure gateway on bluemix -> secure gateway client on premise server -> API Connect on premise server -> SOAP service -> DB2
+The junit tests are under the package sgapi.tests. They can be run with gradle or within Eclipse IDE or from command line via the shell script named testGetItemsJunit.sh
+
+For demonstration purpose it is possible to also use nodejs to do the same validation. The test is defined in src/test/node and uses the *request* module to fist call login to get the access token and then get items API. So the sequences is to perform:
+* http GET on https://cap-sg-prd-5.integration.ibmcloud.com:16582/csplab/sb/sample-inventory-api/login?
+* http GET on https://cap-sg-prd-5.integration.ibmcloud.com:16582/csplab/sb/sample-inventory-api/items
+
+The shell script *testItemsOath.sh* executes this javascript. Be sure to have performed a *npm install* before running the nodejs tests.
 
 ## Execute integration validation tests
 The project uses gradle so the following command executes all the tests

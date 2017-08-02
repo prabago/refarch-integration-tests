@@ -1,2 +1,2 @@
 # Test getting the list of items using Oath token
-curl -k -v -H 'X-IBM-Client-Id:5d2a6edb-793d-4193-b9b0-0a087ea6c123' -H "Authorization : Bearer AAEkNWQyYTZlZGItNzkzZC00MTkzLWI5YjAtMGEwODdlYTZjMTIz8XaPqg1gY8CLpFrXYaQ3jvEcgjMlxMlWc_rMFLoIzbP7BDPseXLlA4htFZJmdDQCWureuMjSjHHm2U1NA6Wt79LX5VNeeFCVneHCRxrjynfpIoAzgyWfJF3m2-8R8wIh"  -H "Content-Type: application/json" "https://172.16.50.8/csplab/sb/sample-inventory-api/item/13403"
+node src/test/node/testGetItems.js
