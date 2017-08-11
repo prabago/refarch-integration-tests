@@ -79,9 +79,9 @@ var getItems = function(token){
 /**
 Main processing
 */
-var token=loginFct({ username: 'boyerje',password:'case01'},
+loginFct({ username: 'boyerje',password:'case01'},
     function(token){
       console.log(token);
-      console.log("now get the token and call items");
+      console.log("now use the token to call items");
       getItems(token);
     });
