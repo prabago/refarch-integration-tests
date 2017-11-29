@@ -34,13 +34,14 @@ The DB2 server validation are under the package db2.tests. It uses JPA entity ma
 ```
 A DB2 JDBC driver is available in the lib folder.
 
-The heavy tests of the Data Access Object are done in the DAL project as unit test. The goal of the testa here is to validate the DB2 database are up and running, and accessible via JDBC. Doing more will enforce redeveloping a DAO layer in this test project which is done in the DAL.
+The heavy tests of the Data Access Object are done in the DAL project as unit test. The goal of the tests here is to validate the DB2 database are up and running, and accessible via JDBC. Doing more will enforce redeveloping a DAO layer in this test project which was already done in the DAL project.
 
-As DB2 table should not be accessed directly, but via the SOAP front end, the failure testing will be done at the DAL component testing.
+Also as DB2 tables should not be accessed directly, but via the SOAP front end, the failure tests are done at the DAL project.
 
 ## DAL Validation
-The goal of those tests are to access the data of the inventory database using the Data Access Layer component from a consumer of the SOAP exposed services. Using JAXWS tooling the DAL web service is accessed via proxy java code created using the ```wsimport``` command. The script is ```importDALWS.sh``` performs the import from the deployed DAL on Liberty server and generates the java classes under src/main/java/inventory/ws.
-This import tool should be run only when the SOAP interface contract changes. The DAL wb service tests are under src/text/java package ws.tests
+The goal of those tests are to access the data of the inventory database using the Data Access Layer component deploy on its app server. The tests are consumers of the SOAP exposed services. Using JAXWS tooling, the DAL web service is accessed via proxy java code created using the `wsimport` command. The script is `importDALWS.sh` performs the import from the deployed DAL on Liberty server and generates the java classes under src/main/java/inventory/ws.
+
+This import tool should be run only when the SOAP interface contract changes. The DAL web service tests are under src/text/java package ws.tests
 
 As of now the CRUD operations for the item are tested as well as fault reporting.
 

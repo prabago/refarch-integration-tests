@@ -6,8 +6,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import inventory.ws.DALException;
-import inventory.ws.InventoryService;
-import inventory.ws.InventoryServiceService;
+import inventory.ws.DALService;
+import inventory.ws.DALServiceService;
 import inventory.ws.Item;
 
 
@@ -18,11 +18,11 @@ import inventory.ws.Item;
  */
 public class TestItemFaultReport {
 
-	static InventoryService serv;
+static DALService serv;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		 serv= (new InventoryServiceService()).getInventoryServicePort();
+		 serv= (new DALServiceService()).getDALServicePort();
 	}
 
 	@AfterClass

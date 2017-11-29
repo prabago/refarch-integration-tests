@@ -1,9 +1,11 @@
 
 package inventory.ws;
 
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -24,6 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="imgAlt" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="img" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="quantity" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="serialNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="model" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +45,10 @@ import javax.xml.bind.annotation.XmlType;
     "price",
     "imgAlt",
     "img",
-    "quantity"
+    "quantity",
+    "type",
+    "serialNumber",
+    "model"
 })
 public class Item {
 
@@ -54,6 +62,12 @@ public class Item {
     protected String img;
     @XmlElement(required = true, type = Integer.class, nillable = true)
     protected Integer quantity;
+    @XmlElementRef(name = "type", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> type;
+    @XmlElementRef(name = "serialNumber", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> serialNumber;
+    @XmlElementRef(name = "model", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> model;
 
     /**
      * Gets the value of the id property.
@@ -221,6 +235,78 @@ public class Item {
      */
     public void setQuantity(Integer value) {
         this.quantity = value;
+    }
+
+    /**
+     * Gets the value of the type property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getType() {
+        return type;
+    }
+
+    /**
+     * Sets the value of the type property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setType(JAXBElement<String> value) {
+        this.type = value;
+    }
+
+    /**
+     * Gets the value of the serialNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getSerialNumber() {
+        return serialNumber;
+    }
+
+    /**
+     * Sets the value of the serialNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setSerialNumber(JAXBElement<String> value) {
+        this.serialNumber = value;
+    }
+
+    /**
+     * Gets the value of the model property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getModel() {
+        return model;
+    }
+
+    /**
+     * Sets the value of the model property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setModel(JAXBElement<String> value) {
+        this.model = value;
     }
 
 }
