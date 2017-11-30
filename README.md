@@ -4,12 +4,13 @@ This project is part of the 'IBM Integration Reference Architecture' suite, avai
 The goal of this test project, is to validate the different components of the hybrid integration architecture at the interface level, and build a suite of test cases for non-regression test. The project can be deployed to a build server and tests executed automatically once all the dependent components are up and running on their own environment. When a test fails, developer should be able to quickly react. Issue could be linked to a service interface contract change, or a behavioral changes identifiable at the consumer level.
 
 The components tested are :
-* [DB2 inventory database](#db2-validation)
-* [Data Access Layer - JAXWS application](#dal-validation)
-* [IIB gateway flow](#iib-gateway-flow)
-* [API Connect - Exposed RESTful API](#api-gateway-validation)
-* [Secure Gateway proxy](##secure-gateway-on-bluemix-validation)
-* REST API of the [Case Inc Portal back end](#portal) for front end for the Bluemix app.
+* [1- DB2 inventory database](#db2-validation)
+* [2 - LDAP](#ldap)
+* [3- Data Access Layer - JAXWS application](#dal-validation)
+* [4- IIB gateway flow](#iib-gateway-flow)
+* [5- API Connect - Exposed RESTful API](#api-gateway-validation)
+* [6- Secure Gateway proxy](##secure-gateway-on-bluemix-validation)
+* [7- REST API of the [Case Inc Portal back end](#portal) for front end for the Bluemix app.
 
 We can support different configuration depending of the deployment strategy selected. We have presented the different configurations for deploying the component of the solution to IBM Cloud Private in [this note](). Testing will be at the interface level but end point will differ depending of the deployment.
 
@@ -17,7 +18,7 @@ This first figure illustrates an hybrid public cloud - on-premise with the diffe
 ![](./docs/it-test-onp.png)
 
 While the following figure illustrates the same targets with one of the potential ICP configuration:
-![](.docs/it-test-icp.png)
+![](./docs/it-test-icp.png)
 
 
 # Test Driven development
