@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "DALServiceService", targetNamespace = "http://ws.inventory/", wsdlLocation = "http://localhost:9080/inventory/ws?wsdl")
+@WebServiceClient(name = "DALServiceService", targetNamespace = "http://ws.inventory/", wsdlLocation = "http://172.16.254.44:9080/inventory/ws?wsdl")
 public class DALServiceService
     extends Service
 {
@@ -30,7 +30,7 @@ public class DALServiceService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:9080/inventory/ws?wsdl");
+            url = new URL("http://172.16.254.44:9080/inventory/ws?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
