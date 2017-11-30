@@ -10,6 +10,7 @@ import org.junit.Test;
 import inventory.ws.DALException;
 import inventory.ws.DALService;
 import inventory.ws.DALServiceService;
+import inventory.ws.Inventory;
 import inventory.ws.Item;
 /**
  * Test the CRUD operations on Item via the DAL SOAP interface
@@ -31,7 +32,7 @@ public class TestItemAccessViaWS {
 
 	@Test
 	public void testGetItems() {
-	
+		System.out.println("Get all items via DAL WS");
 		List<Item> items;
 		try {
 			items = serv.items();
@@ -48,6 +49,7 @@ public class TestItemAccessViaWS {
 	
 	@Test
 	public void testGetItem(){
+		System.out.print("Get item 13403 via DAL WS ");
 		Item item = null;
 		try {
 			item=serv.itemById(13403);
@@ -58,15 +60,18 @@ public class TestItemAccessViaWS {
 			e.printStackTrace();
 			Assert.fail();
 		}
+		System.out.println(" --> success");
 	}
 
 	@Test
 	public void testCreateDeleteItem(){
+		System.out.println("create new item via DAL WS ");
 		Item item = new Item();
 		item.setName("A test item");
 		item.setDescription("item description");
 		item.setPrice(new Double(1000));
 		item.setImg("image url");
+		
 		
 		try {
 			Item itemOut=serv.newItem(item);
@@ -74,6 +79,7 @@ public class TestItemAccessViaWS {
 			Assert.assertTrue(itemOut.getId()>0);
 			Assert.assertNotNull(itemOut.getName());
 			Assert.assertEquals("A test item", itemOut.getName());
+			System.out.print("...now delete it via DAL WS ");
 			String r=serv.deleteItem(itemOut.getId());
 			Assert.assertNotNull(r);
 			Assert.assertEquals("Success",r);
@@ -81,23 +87,21 @@ public class TestItemAccessViaWS {
 			e.printStackTrace();
 			Assert.fail();
 		}
+		System.out.println(" --> success");
 	}
 	
 	@Test
 	public void testUpdateQuantity(){
-		Item item;
+		System.out.println("Update inventory for item 13403 via DAL WS ");
+		Inventory iv=null;
 		try {
-			item=serv.itemById(13403);
-			long currentQuantity=item.getQuantity();
-			System.out.println(currentQuantity);
-			item.setQuantity(item.getQuantity()+1);
-			serv.updateItem(item);
-			Item itemOut=serv.itemById(13403);
-			System.out.println(itemOut.getQuantity());
-			Assert.assertTrue(itemOut.getQuantity()==currentQuantity +1);
+			iv=serv.newInventoryEntry(13403, 20, "SITE_A");
+			Assert.assertNotNull(iv);
+		    
 		} catch (DALException e) {
 			e.printStackTrace();
 			Assert.fail();
 		}
+		System.out.println(" --> success");
 	}
 }

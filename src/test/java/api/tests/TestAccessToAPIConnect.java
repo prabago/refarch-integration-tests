@@ -28,7 +28,7 @@ import inventory.ws.Item;
  * can work
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestAccessToAPI {
+public class TestAccessToAPIConnect {
 	static APICclient client;
 	static String token="";
 	
@@ -76,7 +76,6 @@ public class TestAccessToAPI {
 	}
 
 	@Test
-	
 	public void testGetOneItemDirectAccessToAPIC() {
 		
 		try {

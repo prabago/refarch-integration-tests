@@ -1,11 +1,9 @@
 
 package inventory.ws;
 
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -56,18 +54,13 @@ public class Item {
     protected Long id;
     protected String name;
     protected String description;
-    @XmlElement(required = true, type = Double.class, nillable = true)
-    protected Double price;
+    protected double price;
     protected String imgAlt;
     protected String img;
-    @XmlElement(required = true, type = Integer.class, nillable = true)
-    protected Integer quantity;
-    @XmlElementRef(name = "type", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> type;
-    @XmlElementRef(name = "serialNumber", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> serialNumber;
-    @XmlElementRef(name = "model", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> model;
+    protected int quantity;
+    protected String type;
+    protected String serialNumber;
+    protected String model;
 
     /**
      * Gets the value of the id property.
@@ -144,24 +137,16 @@ public class Item {
     /**
      * Gets the value of the price property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
      */
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
     /**
      * Sets the value of the price property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
      */
-    public void setPrice(Double value) {
+    public void setPrice(double value) {
         this.price = value;
     }
 
@@ -216,24 +201,16 @@ public class Item {
     /**
      * Gets the value of the quantity property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
      */
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
     /**
      * Sets the value of the quantity property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
      */
-    public void setQuantity(Integer value) {
+    public void setQuantity(int value) {
         this.quantity = value;
     }
 
@@ -242,10 +219,10 @@ public class Item {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getType() {
+    public String getType() {
         return type;
     }
 
@@ -254,10 +231,10 @@ public class Item {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setType(JAXBElement<String> value) {
+    public void setType(String value) {
         this.type = value;
     }
 
@@ -266,10 +243,10 @@ public class Item {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getSerialNumber() {
+    public String getSerialNumber() {
         return serialNumber;
     }
 
@@ -278,10 +255,10 @@ public class Item {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setSerialNumber(JAXBElement<String> value) {
+    public void setSerialNumber(String value) {
         this.serialNumber = value;
     }
 
@@ -290,10 +267,10 @@ public class Item {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getModel() {
+    public String getModel() {
         return model;
     }
 
@@ -302,10 +279,10 @@ public class Item {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setModel(JAXBElement<String> value) {
+    public void setModel(String value) {
         this.model = value;
     }
 

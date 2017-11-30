@@ -4,18 +4,28 @@ This project is part of the 'IBM Integration Reference Architecture' suite, avai
 The goal of this test project, is to validate the different components of the hybrid integration architecture at the interface level, and build a suite of test cases for non-regression test. The project can be deployed to a build server and tests executed automatically once all the dependent components are up and running on their own environment. When a test fails, developer should be able to quickly react. Issue could be linked to a service interface contract change, or a behavioral changes identifiable at the consumer level.
 
 The components tested are :
-* DB2 inventory database
-* Data Access Layer - JAXWS application
-* API Connect - Exposed RESTful API
-* Secure Gateway proxy
-* REST API of the Case Inc Portal back end for front end for the Bluemix app.
+* [DB2 inventory database](#db2-validation)
+* [Data Access Layer - JAXWS application](#dal-validation)
+* [IIB gateway flow](#iib-gateway-flow)
+* [API Connect - Exposed RESTful API](#api-gateway-validation)
+* [Secure Gateway proxy](##secure-gateway-on-bluemix-validation)
+* REST API of the [Case Inc Portal back end](#portal) for front end for the Bluemix app.
+
+We can support different configuration depending of the deployment strategy selected. We have presented the different configurations for deploying the component of the solution to IBM Cloud Private in [this note](). Testing will be at the interface level but end point will differ depending of the deployment.
+
+This first figure illustrates an hybrid public cloud - on-premise with the different integration test targets:  
+![](./docs/it-test-onp.png)
+
+While the following figure illustrates the same targets with one of the potential ICP configuration:
+![](.docs/it-test-icp.png)
+
 
 # Test Driven development
 The development approach used for the hybrid integration validation is a test driven development practice where unit tests are developed before code, and then each deployed component is tested in isolation and then as a pyramid testing: first back end component, then middle tier and then front end API.
 
 The Java layer for the Data Access Layer is developed with a pure TDD practice. This testing  project is to test at the integration level, testcases are consumers of each service.
 
-# Integration Test
+# Integration Tests
 In this section we are detailing the tests defined in this current project and how to execute them.
 ## Test organization
 Testcases are under the src/test/java. The src/main/java folder includes utility classes for testing, and generated classes by importing the SOAP web service for the DAL component using the `wsimport` tool. The src/test/java and src/test/node folders includes the test case definitions.
@@ -47,7 +57,9 @@ As of now the CRUD operations for the item are tested as well as fault reporting
 
 *When a test fails in this environment, developer should implement a similar tests in the [DAL project]() to debug and improve unit test coverage.*
 
-## API Validation
+## IIB Gateway flow
+
+## API Gateway Validation
 The goal of the testcases under src/test/java/api is to validate the API Connect API definition for the inventory, login.
 
 Here is a simple test to get all the items of the inventory.
@@ -79,6 +91,8 @@ For demonstration purpose it is possible to also use nodejs to do the same valid
 * http GET on https://cap-sg-prd-5.integration.ibmcloud.com:16582/csplab/sb/sample-inventory-api/items
 
 The shell script *testItemsOath.sh* executes this javascript. Be sure to have performed a *npm install* before running the nodejs tests.
+
+## Portal
 
 ## Execute integration validation tests
 The project uses gradle so the following command executes all the tests

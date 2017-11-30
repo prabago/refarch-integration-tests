@@ -50,17 +50,12 @@ public class Supplier {
     @XmlElementRef(name = "id", type = JAXBElement.class, required = false)
     protected JAXBElement<Long> id;
     protected String name;
-    @XmlElementRef(name = "type", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> type;
-    @XmlElementRef(name = "status", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> status;
-    @XmlElementRef(name = "street", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> street;
-    @XmlElementRef(name = "city", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> city;
+    protected String type;
+    protected String status;
+    protected String street;
+    protected String city;
     protected String zipcode;
-    @XmlElementRef(name = "state", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> state;
+    protected String state;
 
     /**
      * Gets the value of the id property.
@@ -115,10 +110,10 @@ public class Supplier {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getType() {
+    public String getType() {
         return type;
     }
 
@@ -127,10 +122,10 @@ public class Supplier {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setType(JAXBElement<String> value) {
+    public void setType(String value) {
         this.type = value;
     }
 
@@ -139,10 +134,10 @@ public class Supplier {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getStatus() {
+    public String getStatus() {
         return status;
     }
 
@@ -151,10 +146,10 @@ public class Supplier {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setStatus(JAXBElement<String> value) {
+    public void setStatus(String value) {
         this.status = value;
     }
 
@@ -163,10 +158,10 @@ public class Supplier {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getStreet() {
+    public String getStreet() {
         return street;
     }
 
@@ -175,10 +170,10 @@ public class Supplier {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setStreet(JAXBElement<String> value) {
+    public void setStreet(String value) {
         this.street = value;
     }
 
@@ -187,10 +182,10 @@ public class Supplier {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getCity() {
+    public String getCity() {
         return city;
     }
 
@@ -199,10 +194,10 @@ public class Supplier {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setCity(JAXBElement<String> value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
@@ -235,10 +230,10 @@ public class Supplier {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getState() {
+    public String getState() {
         return state;
     }
 
@@ -247,10 +242,10 @@ public class Supplier {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setState(JAXBElement<String> value) {
+    public void setState(String value) {
         this.state = value;
     }
 

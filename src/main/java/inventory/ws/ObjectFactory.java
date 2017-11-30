@@ -73,14 +73,7 @@ public class ObjectFactory {
     private final static QName _DeleteInventoryEntry_QNAME = new QName("http://ws.inventory/", "deleteInventoryEntry");
     private final static QName _NewSupplierResponse_QNAME = new QName("http://ws.inventory/", "newSupplierResponse");
     private final static QName _Suppliers_QNAME = new QName("http://ws.inventory/", "suppliers");
-    private final static QName _SupplierCity_QNAME = new QName("", "city");
-    private final static QName _SupplierStreet_QNAME = new QName("", "street");
     private final static QName _SupplierId_QNAME = new QName("", "id");
-    private final static QName _SupplierState_QNAME = new QName("", "state");
-    private final static QName _SupplierType_QNAME = new QName("", "type");
-    private final static QName _SupplierStatus_QNAME = new QName("", "status");
-    private final static QName _ItemSerialNumber_QNAME = new QName("", "serialNumber");
-    private final static QName _ItemModel_QNAME = new QName("", "model");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: inventory.ws
@@ -931,84 +924,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "city", scope = Supplier.class)
-    public JAXBElement<String> createSupplierCity(String value) {
-        return new JAXBElement<String>(_SupplierCity_QNAME, String.class, Supplier.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "street", scope = Supplier.class)
-    public JAXBElement<String> createSupplierStreet(String value) {
-        return new JAXBElement<String>(_SupplierStreet_QNAME, String.class, Supplier.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Long }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "", name = "id", scope = Supplier.class)
     public JAXBElement<Long> createSupplierId(Long value) {
         return new JAXBElement<Long>(_SupplierId_QNAME, Long.class, Supplier.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "state", scope = Supplier.class)
-    public JAXBElement<String> createSupplierState(String value) {
-        return new JAXBElement<String>(_SupplierState_QNAME, String.class, Supplier.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "type", scope = Supplier.class)
-    public JAXBElement<String> createSupplierType(String value) {
-        return new JAXBElement<String>(_SupplierType_QNAME, String.class, Supplier.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "status", scope = Supplier.class)
-    public JAXBElement<String> createSupplierStatus(String value) {
-        return new JAXBElement<String>(_SupplierStatus_QNAME, String.class, Supplier.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "serialNumber", scope = Item.class)
-    public JAXBElement<String> createItemSerialNumber(String value) {
-        return new JAXBElement<String>(_ItemSerialNumber_QNAME, String.class, Item.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "model", scope = Item.class)
-    public JAXBElement<String> createItemModel(String value) {
-        return new JAXBElement<String>(_ItemModel_QNAME, String.class, Item.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "", name = "type", scope = Item.class)
-    public JAXBElement<String> createItemType(String value) {
-        return new JAXBElement<String>(_SupplierType_QNAME, String.class, Item.class, value);
     }
 
 }

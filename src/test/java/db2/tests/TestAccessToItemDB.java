@@ -60,7 +60,7 @@ public class TestAccessToItemDB {
 		EntityManager em = InventoryPersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
 		ItemEntity entity=em.find(ItemEntity.class, 13403);
 		Assert.assertNotNull(entity);
-		Assert.assertEquals(13403, entity.getId());
+		Assert.assertTrue(13403==entity.getId());
 		em.close();
 	}
 	
