@@ -30,7 +30,7 @@ repositories {
 sourceSets {
   test {
     resources {
-      srcDir "arc/main/resources"
+      srcDir "src/main/resources"
     }
   }
 }
