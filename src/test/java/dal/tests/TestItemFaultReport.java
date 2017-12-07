@@ -1,4 +1,4 @@
-package ws.tests;
+package dal.tests;
 
 import org.junit.AfterClass;
 import org.junit.Assert;

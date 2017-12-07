@@ -1,4 +1,4 @@
-package ws.tests;
+package dal.tests;
 
 import java.util.List;
 

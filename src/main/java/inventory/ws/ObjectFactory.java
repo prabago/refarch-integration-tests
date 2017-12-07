@@ -28,40 +28,47 @@ public class ObjectFactory {
     private final static QName _DeleteItemResponse_QNAME = new QName("http://ws.inventory/", "deleteItemResponse");
     private final static QName _GetInventoryForSiteAndItemId_QNAME = new QName("http://ws.inventory/", "getInventoryForSiteAndItemId");
     private final static QName _UpdateInventoryEntryResponse_QNAME = new QName("http://ws.inventory/", "updateInventoryEntryResponse");
-    private final static QName _UpdateInventory_QNAME = new QName("http://ws.inventory/", "updateInventory");
-    private final static QName _NewInventoryEntryResponse_QNAME = new QName("http://ws.inventory/", "newInventoryEntryResponse");
     private final static QName _DeleteItem_QNAME = new QName("http://ws.inventory/", "deleteItem");
     private final static QName _GetItemsPerSite_QNAME = new QName("http://ws.inventory/", "getItemsPerSite");
     private final static QName _GetInventoryById_QNAME = new QName("http://ws.inventory/", "getInventoryById");
     private final static QName _GetInventoryByIdResponse_QNAME = new QName("http://ws.inventory/", "getInventoryByIdResponse");
-    private final static QName _GetInventoryBySite_QNAME = new QName("http://ws.inventory/", "getInventoryBySite");
+    private final static QName _GetSuppliersOfItem_QNAME = new QName("http://ws.inventory/", "getSuppliersOfItem");
     private final static QName _GetInventoryCrossSiteResponse_QNAME = new QName("http://ws.inventory/", "getInventoryCrossSiteResponse");
     private final static QName _DeleteSupplier_QNAME = new QName("http://ws.inventory/", "deleteSupplier");
     private final static QName _SuppliersResponse_QNAME = new QName("http://ws.inventory/", "suppliersResponse");
+    private final static QName _GetInventoryPerSiteResponse_QNAME = new QName("http://ws.inventory/", "getInventoryPerSiteResponse");
+    private final static QName _GetInventoryPerSupplierResponse_QNAME = new QName("http://ws.inventory/", "getInventoryPerSupplierResponse");
     private final static QName _Supplier_QNAME = new QName("http://ws.inventory/", "Supplier");
     private final static QName _GetInventoryCrossSite_QNAME = new QName("http://ws.inventory/", "getInventoryCrossSite");
+    private final static QName _GetInventoryPerSupplier_QNAME = new QName("http://ws.inventory/", "getInventoryPerSupplier");
+    private final static QName _SellItem_QNAME = new QName("http://ws.inventory/", "sellItem");
     private final static QName _ItemByNameResponse_QNAME = new QName("http://ws.inventory/", "itemByNameResponse");
-    private final static QName _NewInventoryEntry_QNAME = new QName("http://ws.inventory/", "newInventoryEntry");
+    private final static QName _ProvisionItemResponse_QNAME = new QName("http://ws.inventory/", "provisionItemResponse");
     private final static QName _SupplierByName_QNAME = new QName("http://ws.inventory/", "supplierByName");
     private final static QName _ItemByIdResponse_QNAME = new QName("http://ws.inventory/", "itemByIdResponse");
     private final static QName _DeleteInventoryEntryResponse_QNAME = new QName("http://ws.inventory/", "deleteInventoryEntryResponse");
     private final static QName _NewSupplier_QNAME = new QName("http://ws.inventory/", "newSupplier");
     private final static QName _SupplierByNameResponse_QNAME = new QName("http://ws.inventory/", "supplierByNameResponse");
     private final static QName _GetInventoryForSiteAndItemIdResponse_QNAME = new QName("http://ws.inventory/", "getInventoryForSiteAndItemIdResponse");
-    private final static QName _GetInventoryBySiteResponse_QNAME = new QName("http://ws.inventory/", "getInventoryBySiteResponse");
+    private final static QName _GetSuppliersOfItemResponse_QNAME = new QName("http://ws.inventory/", "getSuppliersOfItemResponse");
+    private final static QName _GetItemStockResponse_QNAME = new QName("http://ws.inventory/", "getItemStockResponse");
     private final static QName _Items_QNAME = new QName("http://ws.inventory/", "items");
+    private final static QName _ProvisionItem_QNAME = new QName("http://ws.inventory/", "provisionItem");
     private final static QName _SearchByNameResponse_QNAME = new QName("http://ws.inventory/", "searchByNameResponse");
     private final static QName _UpdateSupplierResponse_QNAME = new QName("http://ws.inventory/", "updateSupplierResponse");
+    private final static QName _GetInventoryPerSite_QNAME = new QName("http://ws.inventory/", "getInventoryPerSite");
+    private final static QName _AddItemToSiteResponse_QNAME = new QName("http://ws.inventory/", "addItemToSiteResponse");
     private final static QName _SupplierById_QNAME = new QName("http://ws.inventory/", "supplierById");
     private final static QName _SayHelloResponse_QNAME = new QName("http://ws.inventory/", "sayHelloResponse");
     private final static QName _UpdateItem_QNAME = new QName("http://ws.inventory/", "updateItem");
     private final static QName _ItemsResponse_QNAME = new QName("http://ws.inventory/", "itemsResponse");
+    private final static QName _GetItemStock_QNAME = new QName("http://ws.inventory/", "getItemStock");
     private final static QName _NewItem_QNAME = new QName("http://ws.inventory/", "newItem");
     private final static QName _SupplierByIdResponse_QNAME = new QName("http://ws.inventory/", "supplierByIdResponse");
     private final static QName _SayHello_QNAME = new QName("http://ws.inventory/", "sayHello");
     private final static QName _ItemById_QNAME = new QName("http://ws.inventory/", "itemById");
-    private final static QName _UpdateInventoryResponse_QNAME = new QName("http://ws.inventory/", "updateInventoryResponse");
     private final static QName _UpdateItemResponse_QNAME = new QName("http://ws.inventory/", "updateItemResponse");
+    private final static QName _AddItemToSite_QNAME = new QName("http://ws.inventory/", "addItemToSite");
     private final static QName _DeleteSupplierResponse_QNAME = new QName("http://ws.inventory/", "deleteSupplierResponse");
     private final static QName _ItemByName_QNAME = new QName("http://ws.inventory/", "itemByName");
     private final static QName _SearchByName_QNAME = new QName("http://ws.inventory/", "searchByName");
@@ -73,6 +80,7 @@ public class ObjectFactory {
     private final static QName _DeleteInventoryEntry_QNAME = new QName("http://ws.inventory/", "deleteInventoryEntry");
     private final static QName _NewSupplierResponse_QNAME = new QName("http://ws.inventory/", "newSupplierResponse");
     private final static QName _Suppliers_QNAME = new QName("http://ws.inventory/", "suppliers");
+    private final static QName _SellItemResponse_QNAME = new QName("http://ws.inventory/", "sellItemResponse");
     private final static QName _SupplierId_QNAME = new QName("", "id");
 
     /**
@@ -80,6 +88,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link SellItemResponse }
+     * 
+     */
+    public SellItemResponse createSellItemResponse() {
+        return new SellItemResponse();
     }
 
     /**
@@ -171,6 +187,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddItemToSite }
+     * 
+     */
+    public AddItemToSite createAddItemToSite() {
+        return new AddItemToSite();
+    }
+
+    /**
      * Create an instance of {@link UpdateItemResponse }
      * 
      */
@@ -184,14 +208,6 @@ public class ObjectFactory {
      */
     public ItemById createItemById() {
         return new ItemById();
-    }
-
-    /**
-     * Create an instance of {@link UpdateInventoryResponse }
-     * 
-     */
-    public UpdateInventoryResponse createUpdateInventoryResponse() {
-        return new UpdateInventoryResponse();
     }
 
     /**
@@ -216,6 +232,14 @@ public class ObjectFactory {
      */
     public SupplierByIdResponse createSupplierByIdResponse() {
         return new SupplierByIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetItemStock }
+     * 
+     */
+    public GetItemStock createGetItemStock() {
+        return new GetItemStock();
     }
 
     /**
@@ -251,6 +275,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddItemToSiteResponse }
+     * 
+     */
+    public AddItemToSiteResponse createAddItemToSiteResponse() {
+        return new AddItemToSiteResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInventoryPerSite }
+     * 
+     */
+    public GetInventoryPerSite createGetInventoryPerSite() {
+        return new GetInventoryPerSite();
+    }
+
+    /**
      * Create an instance of {@link SearchByNameResponse }
      * 
      */
@@ -267,6 +307,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ProvisionItem }
+     * 
+     */
+    public ProvisionItem createProvisionItem() {
+        return new ProvisionItem();
+    }
+
+    /**
      * Create an instance of {@link Items }
      * 
      */
@@ -275,11 +323,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInventoryBySiteResponse }
+     * Create an instance of {@link GetItemStockResponse }
      * 
      */
-    public GetInventoryBySiteResponse createGetInventoryBySiteResponse() {
-        return new GetInventoryBySiteResponse();
+    public GetItemStockResponse createGetItemStockResponse() {
+        return new GetItemStockResponse();
     }
 
     /**
@@ -288,6 +336,14 @@ public class ObjectFactory {
      */
     public GetInventoryForSiteAndItemIdResponse createGetInventoryForSiteAndItemIdResponse() {
         return new GetInventoryForSiteAndItemIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSuppliersOfItemResponse }
+     * 
+     */
+    public GetSuppliersOfItemResponse createGetSuppliersOfItemResponse() {
+        return new GetSuppliersOfItemResponse();
     }
 
     /**
@@ -331,11 +387,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NewInventoryEntry }
+     * Create an instance of {@link ProvisionItemResponse }
      * 
      */
-    public NewInventoryEntry createNewInventoryEntry() {
-        return new NewInventoryEntry();
+    public ProvisionItemResponse createProvisionItemResponse() {
+        return new ProvisionItemResponse();
     }
 
     /**
@@ -355,11 +411,43 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetInventoryPerSupplier }
+     * 
+     */
+    public GetInventoryPerSupplier createGetInventoryPerSupplier() {
+        return new GetInventoryPerSupplier();
+    }
+
+    /**
+     * Create an instance of {@link SellItem }
+     * 
+     */
+    public SellItem createSellItem() {
+        return new SellItem();
+    }
+
+    /**
      * Create an instance of {@link Supplier }
      * 
      */
     public Supplier createSupplier() {
         return new Supplier();
+    }
+
+    /**
+     * Create an instance of {@link GetInventoryPerSupplierResponse }
+     * 
+     */
+    public GetInventoryPerSupplierResponse createGetInventoryPerSupplierResponse() {
+        return new GetInventoryPerSupplierResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetInventoryPerSiteResponse }
+     * 
+     */
+    public GetInventoryPerSiteResponse createGetInventoryPerSiteResponse() {
+        return new GetInventoryPerSiteResponse();
     }
 
     /**
@@ -387,11 +475,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetInventoryBySite }
+     * Create an instance of {@link GetSuppliersOfItem }
      * 
      */
-    public GetInventoryBySite createGetInventoryBySite() {
-        return new GetInventoryBySite();
+    public GetSuppliersOfItem createGetSuppliersOfItem() {
+        return new GetSuppliersOfItem();
     }
 
     /**
@@ -424,22 +512,6 @@ public class ObjectFactory {
      */
     public DeleteItem createDeleteItem() {
         return new DeleteItem();
-    }
-
-    /**
-     * Create an instance of {@link NewInventoryEntryResponse }
-     * 
-     */
-    public NewInventoryEntryResponse createNewInventoryEntryResponse() {
-        return new NewInventoryEntryResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateInventory }
-     * 
-     */
-    public UpdateInventory createUpdateInventory() {
-        return new UpdateInventory();
     }
 
     /**
@@ -519,24 +591,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateInventory }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "updateInventory")
-    public JAXBElement<UpdateInventory> createUpdateInventory(UpdateInventory value) {
-        return new JAXBElement<UpdateInventory>(_UpdateInventory_QNAME, UpdateInventory.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NewInventoryEntryResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "newInventoryEntryResponse")
-    public JAXBElement<NewInventoryEntryResponse> createNewInventoryEntryResponse(NewInventoryEntryResponse value) {
-        return new JAXBElement<NewInventoryEntryResponse>(_NewInventoryEntryResponse_QNAME, NewInventoryEntryResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DeleteItem }{@code >}}
      * 
      */
@@ -573,12 +627,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryBySite }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSuppliersOfItem }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryBySite")
-    public JAXBElement<GetInventoryBySite> createGetInventoryBySite(GetInventoryBySite value) {
-        return new JAXBElement<GetInventoryBySite>(_GetInventoryBySite_QNAME, GetInventoryBySite.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getSuppliersOfItem")
+    public JAXBElement<GetSuppliersOfItem> createGetSuppliersOfItem(GetSuppliersOfItem value) {
+        return new JAXBElement<GetSuppliersOfItem>(_GetSuppliersOfItem_QNAME, GetSuppliersOfItem.class, null, value);
     }
 
     /**
@@ -609,6 +663,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryPerSiteResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryPerSiteResponse")
+    public JAXBElement<GetInventoryPerSiteResponse> createGetInventoryPerSiteResponse(GetInventoryPerSiteResponse value) {
+        return new JAXBElement<GetInventoryPerSiteResponse>(_GetInventoryPerSiteResponse_QNAME, GetInventoryPerSiteResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryPerSupplierResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryPerSupplierResponse")
+    public JAXBElement<GetInventoryPerSupplierResponse> createGetInventoryPerSupplierResponse(GetInventoryPerSupplierResponse value) {
+        return new JAXBElement<GetInventoryPerSupplierResponse>(_GetInventoryPerSupplierResponse_QNAME, GetInventoryPerSupplierResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Supplier }{@code >}}
      * 
      */
@@ -627,6 +699,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryPerSupplier }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryPerSupplier")
+    public JAXBElement<GetInventoryPerSupplier> createGetInventoryPerSupplier(GetInventoryPerSupplier value) {
+        return new JAXBElement<GetInventoryPerSupplier>(_GetInventoryPerSupplier_QNAME, GetInventoryPerSupplier.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SellItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "sellItem")
+    public JAXBElement<SellItem> createSellItem(SellItem value) {
+        return new JAXBElement<SellItem>(_SellItem_QNAME, SellItem.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ItemByNameResponse }{@code >}}
      * 
      */
@@ -636,12 +726,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NewInventoryEntry }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProvisionItemResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "newInventoryEntry")
-    public JAXBElement<NewInventoryEntry> createNewInventoryEntry(NewInventoryEntry value) {
-        return new JAXBElement<NewInventoryEntry>(_NewInventoryEntry_QNAME, NewInventoryEntry.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "provisionItemResponse")
+    public JAXBElement<ProvisionItemResponse> createProvisionItemResponse(ProvisionItemResponse value) {
+        return new JAXBElement<ProvisionItemResponse>(_ProvisionItemResponse_QNAME, ProvisionItemResponse.class, null, value);
     }
 
     /**
@@ -699,12 +789,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryBySiteResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetSuppliersOfItemResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryBySiteResponse")
-    public JAXBElement<GetInventoryBySiteResponse> createGetInventoryBySiteResponse(GetInventoryBySiteResponse value) {
-        return new JAXBElement<GetInventoryBySiteResponse>(_GetInventoryBySiteResponse_QNAME, GetInventoryBySiteResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getSuppliersOfItemResponse")
+    public JAXBElement<GetSuppliersOfItemResponse> createGetSuppliersOfItemResponse(GetSuppliersOfItemResponse value) {
+        return new JAXBElement<GetSuppliersOfItemResponse>(_GetSuppliersOfItemResponse_QNAME, GetSuppliersOfItemResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItemStockResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getItemStockResponse")
+    public JAXBElement<GetItemStockResponse> createGetItemStockResponse(GetItemStockResponse value) {
+        return new JAXBElement<GetItemStockResponse>(_GetItemStockResponse_QNAME, GetItemStockResponse.class, null, value);
     }
 
     /**
@@ -714,6 +813,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "items")
     public JAXBElement<Items> createItems(Items value) {
         return new JAXBElement<Items>(_Items_QNAME, Items.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ProvisionItem }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "provisionItem")
+    public JAXBElement<ProvisionItem> createProvisionItem(ProvisionItem value) {
+        return new JAXBElement<ProvisionItem>(_ProvisionItem_QNAME, ProvisionItem.class, null, value);
     }
 
     /**
@@ -732,6 +840,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "updateSupplierResponse")
     public JAXBElement<UpdateSupplierResponse> createUpdateSupplierResponse(UpdateSupplierResponse value) {
         return new JAXBElement<UpdateSupplierResponse>(_UpdateSupplierResponse_QNAME, UpdateSupplierResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetInventoryPerSite }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getInventoryPerSite")
+    public JAXBElement<GetInventoryPerSite> createGetInventoryPerSite(GetInventoryPerSite value) {
+        return new JAXBElement<GetInventoryPerSite>(_GetInventoryPerSite_QNAME, GetInventoryPerSite.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddItemToSiteResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "addItemToSiteResponse")
+    public JAXBElement<AddItemToSiteResponse> createAddItemToSiteResponse(AddItemToSiteResponse value) {
+        return new JAXBElement<AddItemToSiteResponse>(_AddItemToSiteResponse_QNAME, AddItemToSiteResponse.class, null, value);
     }
 
     /**
@@ -771,6 +897,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetItemStock }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "getItemStock")
+    public JAXBElement<GetItemStock> createGetItemStock(GetItemStock value) {
+        return new JAXBElement<GetItemStock>(_GetItemStock_QNAME, GetItemStock.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link NewItem }{@code >}}
      * 
      */
@@ -807,21 +942,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateInventoryResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.inventory/", name = "updateInventoryResponse")
-    public JAXBElement<UpdateInventoryResponse> createUpdateInventoryResponse(UpdateInventoryResponse value) {
-        return new JAXBElement<UpdateInventoryResponse>(_UpdateInventoryResponse_QNAME, UpdateInventoryResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateItemResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "updateItemResponse")
     public JAXBElement<UpdateItemResponse> createUpdateItemResponse(UpdateItemResponse value) {
         return new JAXBElement<UpdateItemResponse>(_UpdateItemResponse_QNAME, UpdateItemResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddItemToSite }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "addItemToSite")
+    public JAXBElement<AddItemToSite> createAddItemToSite(AddItemToSite value) {
+        return new JAXBElement<AddItemToSite>(_AddItemToSite_QNAME, AddItemToSite.class, null, value);
     }
 
     /**
@@ -921,6 +1056,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.inventory/", name = "suppliers")
     public JAXBElement<Suppliers> createSuppliers(Suppliers value) {
         return new JAXBElement<Suppliers>(_Suppliers_QNAME, Suppliers.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SellItemResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.inventory/", name = "sellItemResponse")
+    public JAXBElement<SellItemResponse> createSellItemResponse(SellItemResponse value) {
+        return new JAXBElement<SellItemResponse>(_SellItemResponse_QNAME, SellItemResponse.class, null, value);
     }
 
     /**

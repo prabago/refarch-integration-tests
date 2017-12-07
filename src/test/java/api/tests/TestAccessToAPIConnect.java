@@ -32,6 +32,8 @@ public class TestAccessToAPIConnect {
 	static APICclient client;
 	static String token="";
 	
+	static String urlapi="csplab/sb/iib-inventory-api";
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		client = new APICclient();
@@ -47,9 +49,9 @@ public class TestAccessToAPIConnect {
 	public void aTestLoginAccess(){
 		try {
 			List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-			nvps.add(new BasicNameValuePair("username", "case@usibm"));
+			nvps.add(new BasicNameValuePair("username", "boyerje"));
 			nvps.add(new BasicNameValuePair("password", "case01"));
-			String rep=client.executeLogin("csplab/sb/sample-inventory-api/login", nvps);
+			String rep=client.executeLogin(urlapi+"/login", nvps);
 			Gson parser = new Gson();
 			token=parser.fromJson(rep, LoginRep.class).getAccess_token();
 			System.out.println(token);
@@ -63,7 +65,7 @@ public class TestAccessToAPIConnect {
 	public void testGetItemsDirectAccessToAPIC() {
 		try {
 	    	
-	    	String itemArray=client.executeGetWithToken("csplab/sb/sample-inventory-api/items", null, token);
+	    	String itemArray=client.executeGetWithToken(urlapi+"/items", null, token);
 			Gson parser = new Gson();
 			@SuppressWarnings("unchecked")
 			Item[] l = parser.fromJson(itemArray, Item[].class);
@@ -79,7 +81,7 @@ public class TestAccessToAPIConnect {
 	public void testGetOneItemDirectAccessToAPIC() {
 		
 		try {
-			String itemArray=client.executeGetWithToken("csplab/sb/sample-inventory-api/item/13402", null,token);
+			String itemArray=client.executeGetWithToken(urlapi+"/item/13402", null,token);
 			Gson parser = new Gson();
 			@SuppressWarnings("unchecked")
 			Item l = parser.fromJson(itemArray, Item.class);

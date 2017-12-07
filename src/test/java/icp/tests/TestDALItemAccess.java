@@ -1,5 +1,6 @@
-package ws.tests;
+package icp.tests;
 
+import java.net.URL;
 import java.util.List;
 
 import org.junit.AfterClass;
@@ -17,13 +18,14 @@ import inventory.ws.Item;
  * @author Jerome Boyer
  *
  */
-public class TestItemAccessViaWS {
+public class TestDALItemAccess {
 
 	static DALService serv;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		 serv= (new DALServiceService()).getDALServicePort();
+		URL dalOnICPUrl = new URL("http://dal.brown.case/inventory/ws?wsdl");;
+		 serv= (new DALServiceService(dalOnICPUrl)).getDALServicePort();
 	}
 
 	@AfterClass
@@ -63,45 +65,5 @@ public class TestItemAccessViaWS {
 		System.out.println(" --> success");
 	}
 
-	@Test
-	public void testCreateDeleteItem(){
-		System.out.println("create new item via DAL WS ");
-		Item item = new Item();
-		item.setName("A test item");
-		item.setDescription("item description");
-		item.setPrice(new Double(1000));
-		item.setImg("image url");
-		
-		
-		try {
-			Item itemOut=serv.newItem(item);
-			Assert.assertNotNull(itemOut);
-			Assert.assertTrue(itemOut.getId()>0);
-			Assert.assertNotNull(itemOut.getName());
-			Assert.assertEquals("A test item", itemOut.getName());
-			System.out.print("...now delete it via DAL WS ");
-			String r=serv.deleteItem(itemOut.getId());
-			Assert.assertNotNull(r);
-			Assert.assertEquals("Success",r);
-		} catch (DALException e) {
-			e.printStackTrace();
-			Assert.fail();
-		}
-		System.out.println(" --> success");
-	}
 	
-	@Test
-	public void testUpdateQuantity(){
-		System.out.println("Update inventory for item 13403 via DAL WS ");
-		Inventory iv=null;
-		try {
-			iv=serv.newInventoryEntry(13403, 20, "SITE_A");
-			Assert.assertNotNull(iv);
-		    
-		} catch (DALException e) {
-			e.printStackTrace();
-			Assert.fail();
-		}
-		System.out.println(" --> success");
-	}
 }
