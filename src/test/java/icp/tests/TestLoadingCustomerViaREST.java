@@ -24,7 +24,7 @@ import po.model.Customer;
  * You need to get the microservice deployed
  */
 public class TestLoadingCustomerViaREST {
-
+	
 	protected static CustomerRestClient client;
 	protected static Gson parser = new GsonBuilder()
 			   .setDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz").create();;
@@ -68,17 +68,17 @@ public class TestLoadingCustomerViaREST {
 		 String s= parser.toJson(c);
 		 System.out.println(s);
         try {
-			client.executePostMethodAsJson("api/customers", s);
+			client.executePostMethodAsJson(client.getProps().getProperty("customerms.baseapi")+"/customers", s);
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail("Exception in test");
 		}
 	}
 	
-	@Test
+	//@Test
 	public void testGetCustomers() {
 		try {
-			String rep=client.executeGetMethod("api/customers", null);
+			String rep=client.executeGetMethod(client.getProps().getProperty("customerms.baseapi")+"/customers", null);
 			JsonDeserializer<Date> deser = new JsonDeserializer<Date>() {
 				  @Override
 				  public Date deserialize(JsonElement json, Type typeOfT,
@@ -98,4 +98,27 @@ public class TestLoadingCustomerViaREST {
 		}
 	}
 
+	@Test
+	public void testGetOneCustomer() {
+		try {
+			String rep=client.executeGetMethod(client.getProps().getProperty("customerms.baseapi")+"/customers/2", null);
+			JsonDeserializer<Date> deser = new JsonDeserializer<Date>() {
+				  @Override
+				  public Date deserialize(JsonElement json, Type typeOfT,
+				       JsonDeserializationContext context) throws JsonParseException {
+				    return json == null ? null : new Date(json.getAsLong());
+				  }
+				};
+			Gson parser = new GsonBuilder().registerTypeAdapter(Date.class, deser).create();
+			Customer[] l = parser.fromJson(rep, Customer[].class);
+			for (Customer c: l){
+				System.out.println(c.getName()+" "+c.getCreationDate().toString());
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			fail("Exception in test");
+		}
+	}
+	
 }
