@@ -1,0 +1,25 @@
+extends: 'spectral:oas'
+rules:
+  api-name-in-kebab-case:
+    given: $.info.title
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[a-z][a-z0-9\-]*$'
+    type: style
+    recommended: true
+    message: Error in the format of the api title
+    description: Error in the format of the api title must be in kebab-case
+    severity: error
+  oas2-schema: false
+  version-major-api:
+    given: $.info.version
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[v][0-9\-]*$'
+    type: style
+    recommended: true
+    message: 'Error in the format of the api version [only permitted major version, example v1]'
+    description: 'Error in the format of the operations must be major version, example v1'
+    severity: error
